@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Production Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="back-link" href="index.html">← Back to list</a>
+        <h1 id="title">Production details</h1>
+        <p class="lede" id="subtitle"></p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="details" class="detail-grid"></section>
+    </main>
+
+    <script>
+      const dataUrl = "../data/productions.json";
+      const title = document.getElementById("title");
+      const subtitle = document.getElementById("subtitle");
+      const details = document.getElementById("details");
+
+      const renderMissing = () => {
+        details.innerHTML =
+          "<p class=\"empty\">Production not found. Return to the list to select another entry.</p>";
+      };
+
+      const buildList = (label, items) => {
+        if (!items || items.length === 0) {
+          return `<p class=\"empty\">No ${label.toLowerCase()} available.</p>`;
+        }
+        return `
+          <ul>
+            ${items.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        `;
+      };
+
+      const init = async () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        if (!id) {
+          renderMissing();
+          return;
+        }
+
+        try {
+          const response = await fetch(dataUrl);
+          const data = await response.json();
+          const production = data.find((item) => item.id === id);
+          if (!production) {
+            renderMissing();
+            return;
+          }
+
+          title.textContent = production.production_title;
+          subtitle.textContent = `${production.company} · ${production.venue}`;
+
+          const themeList = production.themes?.length
+            ? production.themes.join(", ")
+            : "No themes listed";
+          const imageMarkup = production.image_url
+            ? `<img src="${production.image_url}" alt="${production.production_title}" />`
+            : `<div class=\"image-placeholder\">No image available</div>`;
+
+          const reviewItems = (production.reviews || []).map((review) => {
+            const outlet = review.outlet ? `<strong>${review.outlet}:</strong> ` : "";
+            const link = review.url
+              ? ` <a href="${review.url}" target="_blank" rel="noreferrer">Source</a>`
+              : "";
+            return `${outlet}${review.quote}${link}`;
+          });
+
+          const sourceLinks = (production.sources || []).map(
+            (source) => `<a href="${source}" target="_blank" rel=\"noreferrer\">${source}</a>`
+          );
+
+          details.innerHTML = `
+            <section class="card detail-card">
+              <div class="detail-media">${imageMarkup}</div>
+              <div class="detail-body">
+                <h2>Overview</h2>
+                <p><strong>Play:</strong> ${production.play}</p>
+                <p><strong>Company:</strong> ${production.company}</p>
+                <p><strong>Venue:</strong> ${production.venue}</p>
+                <p><strong>Location:</strong> ${production.city}, ${production.country}</p>
+                <p><strong>Dates:</strong> ${production.start_date} → ${production.end_date}</p>
+                <p><strong>Tour:</strong> ${production.is_tour ? "Yes" : "No"}</p>
+                <p><strong>Themes:</strong> ${themeList}</p>
+                <p><strong>Synopsis:</strong> ${production.synopsis}</p>
+              </div>
+            </section>
+            <section class="card">
+              <h2>Reviews</h2>
+              ${buildList("Reviews", reviewItems)}
+            </section>
+            <section class="card">
+              <h2>Sources</h2>
+              ${buildList("Sources", sourceLinks)}
+            </section>
+          `;
+        } catch (error) {
+          renderMissing();
+        }
+      };
+
+      init();
+    </script>
+  </body>
+</html>

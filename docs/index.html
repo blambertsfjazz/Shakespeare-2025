@@ -1,12 +1,143 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shakespeare 2025 Stagings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shakespeare 2025 Productions</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Shakespeare 2025 Stagings</h1>
-    <p>Setup test page. (We’ll replace this with the real site via Codex.)</p>
+    <header class="site-header">
+      <div class="container">
+        <h1>Shakespeare 2025 Productions</h1>
+        <p class="lede">
+          Browse sample production records with filters for play and themes.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="filters" aria-label="Filters">
+        <div class="filter">
+          <label for="play-filter">Play</label>
+          <select id="play-filter"></select>
+        </div>
+        <div class="filter">
+          <label for="theme-filter">Themes</label>
+          <select id="theme-filter" multiple size="6" aria-describedby="theme-help"></select>
+          <p id="theme-help" class="help">
+            Select one or more themes to filter results.
+          </p>
+        </div>
+      </section>
+
+      <section class="results" aria-live="polite">
+        <p id="results-count" class="results-count"></p>
+        <div id="cards" class="cards"></div>
+      </section>
+    </main>
+
+    <script>
+      const dataUrl = "../data/productions.json";
+      const playFilter = document.getElementById("play-filter");
+      const themeFilter = document.getElementById("theme-filter");
+      const cards = document.getElementById("cards");
+      const resultsCount = document.getElementById("results-count");
+
+      const state = {
+        productions: [],
+        themes: [],
+      };
+
+      const uniq = (items) => Array.from(new Set(items)).sort();
+
+      const buildFilters = () => {
+        const plays = uniq(state.productions.map((production) => production.play));
+        playFilter.innerHTML = "";
+        const allOption = document.createElement("option");
+        allOption.value = "";
+        allOption.textContent = "All plays";
+        playFilter.appendChild(allOption);
+        plays.forEach((play) => {
+          const option = document.createElement("option");
+          option.value = play;
+          option.textContent = play;
+          playFilter.appendChild(option);
+        });
+
+        const themes = uniq(
+          state.productions.flatMap((production) => production.themes || [])
+        );
+        themeFilter.innerHTML = "";
+        themes.forEach((theme) => {
+          const option = document.createElement("option");
+          option.value = theme;
+          option.textContent = theme;
+          themeFilter.appendChild(option);
+        });
+      };
+
+      const getSelectedThemes = () =>
+        Array.from(themeFilter.selectedOptions).map((option) => option.value);
+
+      const matchesFilters = (production) => {
+        const selectedPlay = playFilter.value;
+        const selectedThemes = getSelectedThemes();
+        const playMatch = !selectedPlay || production.play === selectedPlay;
+        const themeMatch =
+          selectedThemes.length === 0 ||
+          selectedThemes.every((theme) => production.themes?.includes(theme));
+        return playMatch && themeMatch;
+      };
+
+      const renderCards = () => {
+        const filtered = state.productions.filter(matchesFilters);
+        resultsCount.textContent = `${filtered.length} production${
+          filtered.length === 1 ? "" : "s"
+        } shown.`;
+        cards.innerHTML = "";
+        if (filtered.length === 0) {
+          cards.innerHTML =
+            "<p class=\"empty\">No productions match your filters.</p>";
+          return;
+        }
+
+        filtered.forEach((production) => {
+          const card = document.createElement("article");
+          card.className = "card";
+          const themeList = production.themes?.length
+            ? production.themes.join(", ")
+            : "No themes listed";
+          card.innerHTML = `
+            <div class="card-body">
+              <h2>${production.production_title}</h2>
+              <p class="meta">${production.company} · ${production.city}, ${production.country}</p>
+              <p>${production.start_date} → ${production.end_date}</p>
+              <p class="themes">Themes: ${themeList}</p>
+              <a class="button" href="production.html?id=${production.id}">View details</a>
+            </div>
+          `;
+          cards.appendChild(card);
+        });
+      };
+
+      const init = async () => {
+        try {
+          const response = await fetch(dataUrl);
+          const data = await response.json();
+          state.productions = data;
+          buildFilters();
+          renderCards();
+        } catch (error) {
+          cards.innerHTML =
+            "<p class=\"empty\">Unable to load production data.</p>";
+        }
+      };
+
+      playFilter.addEventListener("change", renderCards);
+      themeFilter.addEventListener("change", renderCards);
+
+      init();
+    </script>
   </body>
 </html>
