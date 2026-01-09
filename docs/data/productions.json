@@ -1,0 +1,241 @@
+[
+  {
+    "id": "sample-hamlet-metro-stage-2025",
+    "sample": true,
+    "play": "Hamlet",
+    "production_title": "SAMPLE: Hamlet (Metro Stage)",
+    "company": "Metro Stage Company",
+    "venue": "Metro Stage",
+    "city": "Seattle",
+    "country": "USA",
+    "start_date": "2025-02-14",
+    "end_date": "2025-03-16",
+    "is_tour": false,
+    "themes": ["power", "identity", "family"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [],
+    "sources": [
+      "https://example.com/metro-stage/hamlet-2025"
+    ]
+  },
+  {
+    "id": "sample-macbeth-riverlight-2025",
+    "sample": true,
+    "play": "Macbeth",
+    "production_title": "SAMPLE: Macbeth (Riverlight Theatre)",
+    "company": "Riverlight Theatre",
+    "venue": "Riverlight Mainstage",
+    "city": "Chicago",
+    "country": "USA",
+    "start_date": "2025-04-04",
+    "end_date": "2025-05-04",
+    "is_tour": false,
+    "themes": ["ambition", "power", "fate"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": "https://example.com/images/riverlight-macbeth.jpg",
+    "reviews": [
+      {
+        "outlet": "Sample Times",
+        "quote": "A clear-eyed, disciplined reading of the text.",
+        "url": "https://example.com/reviews/riverlight-macbeth",
+        "language": "en"
+      }
+    ],
+    "sources": [
+      "https://example.com/riverlight/macbeth-2025",
+      "https://example.com/reviews/riverlight-macbeth"
+    ]
+  },
+  {
+    "id": "sample-othello-northern-2025",
+    "sample": true,
+    "play": "Othello",
+    "production_title": "SAMPLE: Othello (Northern Repertory)",
+    "company": "Northern Repertory",
+    "venue": "Civic Arts Hall",
+    "city": "Manchester",
+    "country": "UK",
+    "start_date": "2025-01-10",
+    "end_date": "2025-02-08",
+    "is_tour": false,
+    "themes": ["jealousy", "trust", "race"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [],
+    "sources": [
+      "https://example.com/northern-rep/othello-2025"
+    ]
+  },
+  {
+    "id": "sample-king-lear-capital-2025",
+    "sample": true,
+    "play": "King Lear",
+    "production_title": "SAMPLE: King Lear (Capital Theatre)",
+    "company": "Capital Theatre",
+    "venue": "Capital Theatre",
+    "city": "Toronto",
+    "country": "Canada",
+    "start_date": "2025-03-07",
+    "end_date": "2025-04-06",
+    "is_tour": false,
+    "themes": ["family", "authority", "madness"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": "https://example.com/images/capital-lear.jpg",
+    "reviews": [
+      {
+        "outlet": "City Review",
+        "quote": "A focused ensemble delivery that keeps the tragedy direct.",
+        "url": "https://example.com/reviews/capital-lear",
+        "language": "en"
+      },
+      {
+        "outlet": "Stage Journal",
+        "quote": "The pacing is brisk and the narrative remains clear.",
+        "url": "https://example.com/reviews/capital-lear-stage-journal",
+        "language": "en"
+      }
+    ],
+    "sources": [
+      "https://example.com/capital/king-lear-2025",
+      "https://example.com/reviews/capital-lear",
+      "https://example.com/reviews/capital-lear-stage-journal"
+    ]
+  },
+  {
+    "id": "sample-twelfth-night-marina-2025",
+    "sample": true,
+    "play": "Twelfth Night",
+    "production_title": "SAMPLE: Twelfth Night (Marina Playhouse)",
+    "company": "Marina Playhouse",
+    "venue": "Marina Playhouse",
+    "city": "Sydney",
+    "country": "Australia",
+    "start_date": "2025-06-05",
+    "end_date": "2025-07-06",
+    "is_tour": false,
+    "themes": ["identity", "love", "gender"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [],
+    "sources": [
+      "https://example.com/marina/twelfth-night-2025"
+    ]
+  },
+  {
+    "id": "sample-romeo-juliet-city-opera-2025",
+    "sample": true,
+    "play": "Romeo and Juliet",
+    "production_title": "SAMPLE: Romeo and Juliet (City Opera Theatre)",
+    "company": "City Opera Theatre",
+    "venue": "Grand Opera House",
+    "city": "Vienna",
+    "country": "Austria",
+    "start_date": "2025-09-12",
+    "end_date": "2025-10-12",
+    "is_tour": false,
+    "themes": ["love", "conflict", "family"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": "https://example.com/images/city-opera-romeo.jpg",
+    "reviews": [
+      {
+        "outlet": "Die Bühne",
+        "quote": "A measured production that keeps the focus on the family conflict.",
+        "url": "https://example.com/reviews/city-opera-romeo",
+        "language": "de"
+      }
+    ],
+    "sources": [
+      "https://example.com/city-opera/romeo-juliet-2025",
+      "https://example.com/reviews/city-opera-romeo"
+    ]
+  },
+  {
+    "id": "sample-midsummer-lake-2025",
+    "sample": true,
+    "play": "A Midsummer Night's Dream",
+    "production_title": "SAMPLE: A Midsummer Night's Dream (Lakefront Theatre)",
+    "company": "Lakefront Theatre",
+    "venue": "Lakefront Amphitheatre",
+    "city": "Cleveland",
+    "country": "USA",
+    "start_date": "2025-07-18",
+    "end_date": "2025-08-17",
+    "is_tour": false,
+    "themes": ["magic", "love", "chaos"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [],
+    "sources": [
+      "https://example.com/lakefront/midsummer-2025"
+    ]
+  },
+  {
+    "id": "sample-julius-caesar-redbrick-2025",
+    "sample": true,
+    "play": "Julius Caesar",
+    "production_title": "SAMPLE: Julius Caesar (Redbrick University)",
+    "company": "Redbrick University Theatre",
+    "venue": "Redbrick Studio Theatre",
+    "city": "Bristol",
+    "country": "UK",
+    "start_date": "2025-11-01",
+    "end_date": "2025-11-15",
+    "is_tour": false,
+    "themes": ["power", "politics", "loyalty"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [
+      {
+        "outlet": "Campus Review",
+        "quote": "A disciplined student ensemble with unusually clear storytelling.",
+        "url": "https://example.com/reviews/redbrick-caesar",
+        "language": "en"
+      }
+    ],
+    "sources": [
+      "https://example.com/redbrick/julius-caesar-2025",
+      "https://example.com/reviews/redbrick-caesar"
+    ]
+  },
+  {
+    "id": "sample-tempest-zenith-2025",
+    "sample": true,
+    "play": "The Tempest",
+    "production_title": "SAMPLE: The Tempest (Zenith Theatre)",
+    "company": "Zenith Theatre",
+    "venue": "Zenith Theatre",
+    "city": "Dublin",
+    "country": "Ireland",
+    "start_date": "2025-08-22",
+    "end_date": "2025-09-21",
+    "is_tour": false,
+    "themes": ["forgiveness", "power", "exile"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": "https://example.com/images/zenith-tempest.jpg",
+    "reviews": [],
+    "sources": [
+      "https://example.com/zenith/tempest-2025"
+    ]
+  },
+  {
+    "id": "sample-tour-merchant-2025",
+    "sample": true,
+    "play": "The Merchant of Venice",
+    "production_title": "SAMPLE: The Merchant of Venice (National Touring Company)",
+    "company": "National Touring Company",
+    "venue": "Multiple Venues (Tour)",
+    "city": "Multiple",
+    "country": "USA",
+    "start_date": "2025-01-20",
+    "end_date": "2025-05-20",
+    "is_tour": true,
+    "themes": ["justice", "mercy", "money"],
+    "synopsis": "Sample data for UI testing only.",
+    "image_url": null,
+    "reviews": [],
+    "sources": [
+      "https://example.com/national-tour/merchant-2025"
+    ]
+  }
+]
