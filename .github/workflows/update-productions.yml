@@ -1,0 +1,40 @@
+name: Update Shakespeare 2025 productions
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run updater
+        run: python scripts/update_productions.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: automated/update-productions
+          title: "Update 2025 production candidates"
+          body: |
+            Automated weekly update from GDELT DOC 2.1.
+
+            - Runs `scripts/update_productions.py`
+            - Flags new entries as `needs_editorial: true`
+          commit-message: "Update production candidates"
+          delete-branch: true
+          add-paths: |
+            docs/data/productions.json
