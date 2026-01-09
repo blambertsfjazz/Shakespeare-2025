@@ -18,9 +18,12 @@
 - `themes` (array of strings, required): Curated themes for filtering.
 - `synopsis` (string, required): Short factual summary; avoid unsupported staging claims.
 - `image_url` (string or null, required): Hotlinked image URL when available.
+- `image_urls` (array of strings, optional): Up to 2 hotlinked image URLs when available.
 - `reviews` (array, required): Up to 2–3 review bullets.
   - `outlet` (string, required)
   - `quote` (string, required): Review bullet text (English).
   - `url` (string, required)
   - `language` (string, required)
 - `sources` (array of strings, required): All source URLs referenced for the production.
+- `needs_editorial` (boolean, optional): `true` when entries need human verification.
+- `staging_description` (string, optional): Leave blank unless supported by sources.

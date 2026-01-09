@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Royal Shakespeare Company",
+    "url": "https://www.rsc.org.uk/",
+    "region": "UK",
+    "notes": "Major repertory company based in Stratford-upon-Avon."
+  },
+  {
+    "name": "Shakespeare's Globe",
+    "url": "https://www.shakespearesglobe.com/",
+    "region": "UK",
+    "notes": "London theatre and education centre."
+  },
+  {
+    "name": "Stratford Festival",
+    "url": "https://www.stratfordfestival.ca/",
+    "region": "Canada",
+    "notes": "Large-scale Shakespeare festival in Ontario."
+  },
+  {
+    "name": "Oregon Shakespeare Festival",
+    "url": "https://www.osfashland.org/",
+    "region": "USA",
+    "notes": "Ashland-based repertory festival."
+  },
+  {
+    "name": "Chicago Shakespeare Theater",
+    "url": "https://www.chicagoshakes.com/",
+    "region": "USA",
+    "notes": "Year-round Shakespeare-producing theatre."
+  },
+  {
+    "name": "The Public Theater",
+    "url": "https://publictheater.org/",
+    "region": "USA",
+    "notes": "New York-based producer of Shakespeare in the Park."
+  },
+  {
+    "name": "Guthrie Theater",
+    "url": "https://www.guthrietheater.org/",
+    "region": "USA",
+    "notes": "Major regional theatre with Shakespeare programming."
+  },
+  {
+    "name": "Sydney Theatre Company",
+    "url": "https://www.sydneytheatre.com.au/",
+    "region": "Australia",
+    "notes": "National flagship theatre company."
+  },
+  {
+    "name": "Melbourne Theatre Company",
+    "url": "https://www.mtc.com.au/",
+    "region": "Australia",
+    "notes": "Major Australian producing company."
+  },
+  {
+    "name": "Burgtheater",
+    "url": "https://www.burgtheater.at/",
+    "region": "Austria",
+    "notes": "Vienna state theatre with Shakespeare productions."
+  },
+  {
+    "name": "Schaubühne Berlin",
+    "url": "https://www.schaubuehne.de/",
+    "region": "Germany",
+    "notes": "Berlin theatre known for contemporary Shakespeare stagings."
+  },
+  {
+    "name": "Comédie-Française",
+    "url": "https://www.comedie-francaise.fr/",
+    "region": "France",
+    "notes": "French national theatre with repertory programming."
+  },
+  {
+    "name": "Teatro di Roma",
+    "url": "https://www.teatrodiroma.net/",
+    "region": "Italy",
+    "notes": "Rome-based theatre foundation."
+  },
+  {
+    "name": "Singapore Repertory Theatre",
+    "url": "https://www.srt.com.sg/",
+    "region": "Singapore",
+    "notes": "Major English-language theatre company in Singapore."
+  },
+  {
+    "name": "Habima National Theatre",
+    "url": "https://www.habima.co.il/",
+    "region": "Israel",
+    "notes": "Israel's national theatre with classical repertoire."
+  }
+]
