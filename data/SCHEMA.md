@@ -1,6 +1,6 @@
 # Productions JSON Schema (human-readable)
 
-`/data/productions.json` contains an array of production objects.
+`/docs/data/productions.json` contains an array of production objects.
 
 ## Production object
 
